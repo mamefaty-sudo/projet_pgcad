@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Laravel 
 
-C'est un projet de Gestion de planification de données académiques c'est un projrt de machon truc dksbhkakjbdbnm
+C'est un projet de Gestion de planification de données académiques c'est un projrt de machon truc dksbhkakjbdbnm Bonjour a tous les utilisateurs
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).

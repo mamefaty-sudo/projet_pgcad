@@ -24,8 +24,27 @@ class AnneeAcademique extends Model
         return $this->HasMany(Semestre::class);
     }
 
-    
+    public function dateMortes(): HasMnay
+    {
+        return $this->HasMany(DateMorte::class);
+    }
 
+    public function estPlanifiable($date)
+    {
+        //verifier si la date est planifiable
+        if($date < $this->date_debut || $date > $date_fin){
+            return false;
+        }
+
+        //verifier si la date est une date morte 
+        // la fonction parcours l'ensemble des date morte pour savoir si une date considere appartient dans cette intervalle
+        foreach ($this->dateMortes as $dateMorte){
+            if($date >= $dateMorte->date_debut && $date <= $dateMorte->date_fin){
+                return false;
+            }
+        }
+        return false;
+    }
 
 
 }

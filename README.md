@@ -9,7 +9,7 @@
 
 ## About Laravel
 
-C'est un projet de Gestion de planification de données académiques
+C'est un projet de Gestion de planification de données académiques c'est un projrt de machon truc dksbhkakjbdbnm
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).

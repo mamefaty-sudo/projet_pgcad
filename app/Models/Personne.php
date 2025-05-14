@@ -9,4 +9,14 @@ class Personne extends Model
 {
     /** @use HasFactory<\Database\Factories\PersonneFactory> */
     use HasFactory;
+    protected $fillable = [
+            'nom',
+            'prenom',
+            'email',
+            'matricule',
+            'statut',
+            'role',
+            'motDePasse'
+    ];
+
 }

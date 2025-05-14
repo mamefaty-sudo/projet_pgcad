@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Model;
 
-class ChefDeFilliere extends Model
+class ChefDeFilliere extends Personne
 {
     /** @use HasFactory<\Database\Factories\ChefDeFilliereFactory> */
     use HasFactory;
+
+    protected $fillable = ['nom_filliere'];
 }

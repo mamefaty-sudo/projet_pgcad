@@ -12,9 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ues', function (Blueprint $table) {
-            $table->id();
+           // $table->string('codeUE')->primary()->check("'codeUE' LIKE ");
+           $table->string('codeUE')->primary();
+           $table->string('codeEC');
+            $table->string('Element_Constitutif');
+            $table->integer('VHT');
+            $table->integer('Coef');
+            $table->integer('Credit'); 
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE ues ADD CONSTRAINT check_codeUE CHECK (codeUE LIKE 'INF%')");
     }
 
     /**

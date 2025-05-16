@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departements', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomDpt');
-            $table->unsignedBigInteger('niveau_id')->nullable();
-            $table->timestamps();
-            $table->foreign('niveau_id')->references('id')->on('niveaux');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('departement_id')->references('id')->on('departements')->OnDelete('cascade');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departements');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

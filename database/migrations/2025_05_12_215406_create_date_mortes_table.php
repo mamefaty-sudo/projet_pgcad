@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('date_mortes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('annee_academique_id');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->enum('type', ['vacances', 'ferie']);
+            
             $table->timestamps();
+            
         });
     }
 

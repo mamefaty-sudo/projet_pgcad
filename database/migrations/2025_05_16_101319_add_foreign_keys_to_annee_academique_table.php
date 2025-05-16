@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personnes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('annee_academiques', function (Blueprint $table) {
+            $table->foreign('date_morte_id')->references('id')->on('date_mortes');
+            $table->foreign('date_extreme_id')->references('id')->on('date_extremes');
         });
     }
 
@@ -22,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personnes');
+        Schema::table('date_mortes', function (Blueprint $table) {
+            //
+        });
     }
 };

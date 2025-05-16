@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('chef_de_departements', function (Blueprint $table) {
             $table->id();
+           $table->unsignedBigInteger('user_id');
+            //$table->unsignedBigInteger('departement_id')->nullable();
+            $table->string('nomDpt');
+            $table->unsignedBigInteger('departement_id');
+            $table->date('date_nomination')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('departement_id')->references('id')->on('departements')->onDelete('cascade');
         });
     }
 

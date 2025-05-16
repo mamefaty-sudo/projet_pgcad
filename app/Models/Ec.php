@@ -20,8 +20,12 @@ class EC extends Model
         'nbHeureEC',
         'nbHeureTD',
         'nbTotalHeure',
-        'ue_id',
+        'codeUE',
     ];
+
+    protected $primaryKey = 'codeEC';
+    protected $typeKey = 'string';
+    public $incrementing = false;
 
     public function ue(): BelongsTo {
         return $this->belongsTo(UE::class);

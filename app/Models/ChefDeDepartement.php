@@ -3,12 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Model;
 
-class ChefDeDepartement extends Personne
+class ChefDeDepartement extends User
 {
     /** @use HasFactory<\Database\Factories\ChefDeDepartementFactory> */
     use HasFactory;
 
-    protected $fillable = ['nom_dept'];
+    protected $fillable = ['nom_dept',  'departement_id', 'date_nomination'];
+
+    public function departement(): BelongsTo
+    {
+        return $this->belongsTo(Departement::class, 'departement_id');
+    }
 }

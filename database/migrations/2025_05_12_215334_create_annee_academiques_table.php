@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('annee_academiques', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->unsignedBigInteger('date_morte_id');
+            $table->unsignedBigInteger('date_extreme_id');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->boolean('demarrer')->default(false);
             $table->timestamps();
+
         });
     }
 

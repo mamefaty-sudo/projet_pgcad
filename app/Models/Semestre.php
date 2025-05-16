@@ -14,8 +14,10 @@ class Semestre extends Model
     /** @use HasFactory<\Database\Factories\SemestreFactory> */
     use HasFactory;
 
-    protected $fillable = ['id_semestre', 'nom_semestre', 'annee_academique_id'];
-
+    protected $fillable = ['id', 'nom_semestre', 'annee_academique_id', 'option_id', 'niveau_id'];
+    //protected $primaryKey = 'id_semestre';
+    //protected $keyType = 'integer';
+    //public $incrementing = true;
     public function anneeAcademique(): BelongsTo
     {
         return $this->belongsTo(AnneeAcademique::class);
@@ -26,7 +28,12 @@ class Semestre extends Model
     }
 
     public function niveaux(): BelongsToMany {
-        return $this->belongsToMany(Niveau::class, 'semestre_niveau');
+        return $this->belongsTo(Niveau::class, 'semestre_niveau');
+    }
+
+    public function option()
+    {
+        return $this->belongsTo(Option::class);
     }
 
     

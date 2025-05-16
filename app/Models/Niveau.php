@@ -33,7 +33,7 @@ class Niveau extends Model
     }
 
     public function semestres(): HasMany {
-        return $this->hasMany(Semestre::class, 'semestre_niveau');
+        return $this->belongsToMany(Semestre::class, 'semestre_niveau');
     }
 
 }

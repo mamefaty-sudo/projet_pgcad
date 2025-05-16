@@ -63,4 +63,15 @@ class EcController extends Controller
     {
         //
     }
+
+    public function SuiviEc(Ec $ec , $heure){
+
+        $PourcentageEc = ($heure / $this->nbtotalHeure) * 100;
+        return $PourcentageEc;
+    }
+
+    public function ReportingEc(Ec $ec){
+
+        
+    }
 }

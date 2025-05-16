@@ -13,7 +13,9 @@ class NiveauController extends Controller
      */
     public function index()
     {
-        //
+        $niveau = Niveau::all();  
+        return view('niveaux.index', 
+        compact('niveau'));
     }
 
     /**
@@ -37,7 +39,8 @@ class NiveauController extends Controller
      */
     public function show(Niveau $niveau)
     {
-        //
+         $etat = Ec:: find($niveau);
+         return view('niveaux.show',compact('niveau'));
     }
 
     /**

@@ -13,7 +13,9 @@ class SemestreController extends Controller
      */
     public function index()
     {
-        //
+        $semestre = Semestre::all();  
+        return view('semestres.index', 
+        compact('semestre'));
     }
 
     /**
@@ -37,7 +39,8 @@ class SemestreController extends Controller
      */
     public function show(Semestre $semestre)
     {
-        //
+         $partie = Ec:: find($semestre);
+         return view('Semestres.show',compact('semestre'));
     }
 
     /**

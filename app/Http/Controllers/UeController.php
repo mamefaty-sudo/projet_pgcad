@@ -13,7 +13,9 @@ class UeController extends Controller
      */
     public function index()
     {
-        //
+        $ue = Ue::all();  
+        return view('uesindex', 
+        compact('ue'));
     }
 
     /**
@@ -37,7 +39,8 @@ class UeController extends Controller
      */
     public function show(Ue $ue)
     {
-        //
+         $module = Ue:: find($ue);
+         return view('ues.show',compact('ue'));
     }
 
     /**

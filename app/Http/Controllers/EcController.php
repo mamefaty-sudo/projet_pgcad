@@ -13,7 +13,9 @@ class EcController extends Controller
      */
     public function index()
     {
-        //
+        $ecs = Ec::all();  
+        return view('ecs.index', 
+        compact('ec'));  // -> resources/views/Ecs/index.blade.php   
     }
 
     /**
@@ -37,7 +39,8 @@ class EcController extends Controller
      */
     public function show(Ec $ec)
     {
-        //
+         $cours = Ec:: find($ec);
+         return view('ecs.show',compact('ec'));
     }
 
     /**
@@ -85,8 +88,8 @@ class EcController extends Controller
             'Heure Retante'=> $heureRestante,
             'Progression' => round($pourcentage,2),
             'Statut' => ($ec->nbHeureSuivie >= $ec->nbHeureTotale)
-            ? 'Terminé ✅'
-            : 'En cours 📘'
+            ? 'Terminé '
+            : 'En cours '
         ];
 
     }

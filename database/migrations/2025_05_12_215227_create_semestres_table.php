@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('niveau_id');
             $table->unsignedBigInteger('annee_academique_id');
             $table->string('nom_semestre');
+            $table->interger('nbSemaines');
             $table->timestamps();
             //$table->unsignedBigInteger('annee_academique_id');
 

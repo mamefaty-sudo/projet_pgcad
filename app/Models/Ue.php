@@ -13,6 +13,9 @@ class UE extends Model
     use HasFactory;
     protected $table ='ues';
     protected $fillable = ['codeUE', 'Element_Constitutif', 'VHT', 'Coef', 'Credit'];
+    protected $primaryKey = 'codeUE';
+    protected $typeKey = 'string';
+    public $incrementing = false;
 
     public function ecs(): HasMany {
         return $this->hasMany(EC::class);

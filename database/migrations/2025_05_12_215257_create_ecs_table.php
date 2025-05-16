@@ -12,9 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ecs', function (Blueprint $table) {
-            $table->id();
+            $table->string('codeEC')->primary();
+            $table->string('intitule');
+            $table->string('statut');
+            $table->integer('nbHeureCM');
+            $table->integer('nbHeureTD');
+            $table->integer('nbTotalHeure');
+           // $table->check("codeEC LIKE 'INF%'");
             $table->timestamps();
+
+           
         });
+
+        DB::statement("ALTER TABLE ecs ADD CONSTRAINT check_codeEC CHECK (codeEC LIKE 'INF%')");
     }
 
     /**
@@ -24,4 +34,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('ecs');
     }
+
 };

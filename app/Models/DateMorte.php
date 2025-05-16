@@ -20,8 +20,8 @@ class DateMorte extends Model
         'annee_academique_id'
     ];
     protected $casts =[
-        'date_debut' ='date',
-        'date_fin' = 'date',
+        'date_debut' =='date',
+        'date_fin' == 'date',
     ];
 
     public function anneeAcademique(): BelongsTo {

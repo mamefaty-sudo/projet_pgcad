@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('niveaux', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('option_id');
+            $table->string('codeUE');
+            $table->string('nom_niveau');            
             $table->timestamps();
         });
     }

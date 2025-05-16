@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('date_extremes', function (Blueprint $table) {
             $table->id();
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->timestamps();
         });
     }

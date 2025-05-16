@@ -18,6 +18,8 @@ class AnneeAcademique extends Model
         'date_fin' => 'date',
         'demarrer' => 'boolean',
     ];
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     public function semestres(): HasMany
     {

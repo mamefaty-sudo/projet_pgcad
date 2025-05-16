@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('assistants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('nomAssistantDpt');
+            $table->unsignedBigInteger('departement_id');
+            $table->date('date_affectation')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('departement_id')->references('id')->on('departements')->onDelete('cascade');
         });
     }
 

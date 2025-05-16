@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('chef_de_fillieres', function (Blueprint $table) {
+         //   $table->unsignedBigInteger('user_id')->primary();
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('departement_id');
+            $table->string('nomFilliere');
+            $table->date('date_nomination')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('departement_id')->references('id')->on('departements')->onDelete('cascade');
         });
     }
 

@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('semestres', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('option_id');
             $table->unsignedBigInteger('niveau_id');
-            $table->unsignedBigInteger('annee_academique_id');
-            $table->string('nom_semestre');
+            $table->unsignedBigInteger('semestre_id'); 
+            $table->string('nom_option');;
             $table->timestamps();
-            //$table->unsignedBigInteger('annee_academique_id');
-
+            $table->foreign('semestre_id')->references('id')->on('semestres')->onDelete('cascade');
+            $table->foreign('niveau_id')->references('id')->on('niveaux')->onDelete('cascade');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('semestres');
+        Schema::dropIfExists('options');
     }
 };

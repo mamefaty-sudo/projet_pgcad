@@ -53,7 +53,7 @@ class EcController extends Controller
      */
     public function update(UpdateEcRequest $request, Ec $ec)
     {
-        //
+        
     }
 
     /**
@@ -64,14 +64,32 @@ class EcController extends Controller
         //
     }
 
-    public function SuiviEc(Ec $ec , $heure){
+    public function SuiviEc(Ec $ec , $heure):array
+    {
 
-        $PourcentageEc = ($heure / $this->nbtotalHeure) * 100;
-        return $PourcentageEc;
+        $ec->nbHeureSuivi += $heure;
+
+        if ($ec->nbHeureSuivi > $ec->nbHeureTotal){
+            $ec->nbHeureSuivi = $ec->nbHeureTotal;
+        }
+
+        $ec->save();
+
+        $heureRestante = max(0,$ec->nbHeureTotal - $ec->nbHeureSuivi);
+        $pourcentage = ($ec->nbHeureTotal >0)? ($ec->nbHeureSuivi / $ec->nbHeureTotal) * 100 : 0;
+
+        return [
+            'Cours' => $ec->Intitule,
+            'Heure total' => $ec->nbHeureTotal,
+            'Heure Suivie' => $ec->nbHeureSuivi,
+            'Heure Retante'=> $heureRestante,
+            'Progression' => round($pourcentage,2),
+            'Statut' => ($ec->nbHeureSuivie >= $ec->nbHeureTotale)
+            ? 'Terminé ✅'
+            : 'En cours 📘'
+        ];
+
     }
 
-    public function ReportingEc(Ec $ec){
-
-        
-    }
+     
 }

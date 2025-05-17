@@ -66,4 +66,19 @@ class SemestreController extends Controller
     {
         //
     }
+
+
+    Public function suiviSemestre(Semestre $semestre, $semaineEcoulee ){
+        if($semaineEcoulee> $semestre->nbSemaines){
+            print("Les semaines de ce semaine "+$semestre->nom_semestre+" est depassees.");
+            $semaineEcoulee = $semestre->nbSemaines;
+        }
+
+        $semaineRestante = max(0,$semestre->nbSemaines - $semaineEcoulee);
+        $pourcentage = ($semestre->nbnbSemaines >0)? ($semaineEcoulee / $semestre->nbSemaines) * 100 : 0;
+
+        return $pourcentage;
+    }
+
 }
+ 

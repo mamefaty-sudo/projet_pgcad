@@ -20,6 +20,7 @@ class EC extends Model
         'nbHeureEC',
         'nbHeureTD',
         'nbTotalHeure',
+        'nbHeureSuivi',
         'codeUE',
     ];
 

@@ -20,12 +20,7 @@ class EC extends Model
         'nbHeureEC',
         'nbHeureTD',
         'nbTotalHeure',
-<<<<<<< HEAD
-        'nbHeureSuivi',
-        'ue_id',
-=======
         'codeUE',
->>>>>>> ce1c117295369c8d598ef6adad1aeb0cd77d0116
     ];
 
     protected $primaryKey = 'codeEC';

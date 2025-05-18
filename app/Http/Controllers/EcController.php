@@ -6,14 +6,14 @@ use App\Models\Ec;
 use App\Http\Requests\StoreEcRequest;
 use App\Http\Requests\UpdateEcRequest;
 
-class EcController extends Controller
+class ECController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $ecs = Ec::all();  
+        $ecs = EC::all();  
         return view('ecs.index', 
         compact('ec'));  // -> resources/views/Ecs/index.blade.php   
     }
@@ -37,9 +37,9 @@ class EcController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ec $ec)
+    public function show(EC $ec)
     {
-         $cours = Ec:: find($ec);
+         $cours = EC:: find($ec);
          return view('ecs.show',compact('ec'));
     }
 
@@ -54,7 +54,7 @@ class EcController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEcRequest $request, Ec $ec)
+    public function update(UpdateEcRequest $request, EC $ec)
     {
         
     }
@@ -62,12 +62,12 @@ class EcController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Ec $ec)
+    public function destroy(EC $ec)
     {
         //
     }
 
-    public function SuiviEc(Ec $ec , $heure):array
+    public function SuiviEc(EC $ec , $heure):array
     {
 
         $ec->nbHeureSuivi += $heure;

@@ -6,14 +6,14 @@ use App\Models\Ue;
 use App\Http\Requests\StoreUeRequest;
 use App\Http\Requests\UpdateUeRequest;
 
-class UeController extends Controller
+class UEController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $ue = Ue::all();  
+        $ue = UE::all();  
         return view('uesindex', 
         compact('ue'));
     }
@@ -37,16 +37,16 @@ class UeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ue $ue)
+    public function show(UE $ue)
     {
-         $module = Ue:: find($ue);
+         $module = UE:: find($ue);
          return view('ues.show',compact('ue'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ue $ue)
+    public function edit(UE $ue)
     {
         //
     }
@@ -54,7 +54,7 @@ class UeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUeRequest $request, Ue $ue)
+    public function update(UpdateUeRequest $request, UE $ue)
     {
         //
     }
@@ -62,7 +62,7 @@ class UeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Ue $ue)
+    public function destroy(UE $ue)
     {
         //
     }

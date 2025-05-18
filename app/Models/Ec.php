@@ -31,4 +31,15 @@ class EC extends Model
     public function ue(): BelongsTo {
         return $this->belongsTo(UE::class);
     }
+
+    public function semestre(){
+    return $this->belongsTo(Semestre::class);
+    }
+
+    public function niveau(){
+    return $this->semestre->niveau();  
+    }
+
+   
 }
+ 

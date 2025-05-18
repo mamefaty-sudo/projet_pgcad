@@ -94,5 +94,14 @@ class ECController extends Controller
 
     }
 
+    public function suiviComplet(){
+        
+    $ecs = Ec::with('semestre.niveau')->get();
+    return view('suivi.complet', compact('ecs'));
+    
+
+    }
+
+
      
 }

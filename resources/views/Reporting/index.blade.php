@@ -23,7 +23,7 @@
             <tbody>
                 @foreach($ecs as $ec)
                 <tr>
-                    <td>{{$semestre->nom_semestre+"-"+$niveau->nom_niveau}}</td>
+                    <td>{{$semestre->nom_semestre. '-' .$niveau->nom_niveau}}</td>
                     <td>{{ $ec->Intitule }}</td>
                     <td>{{ $ec->nbHeureTotal }}</td>
                     <td>{{ $ec->nbHeureSuivi }}</td>

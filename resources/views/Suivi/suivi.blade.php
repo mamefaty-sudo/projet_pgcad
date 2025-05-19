@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </td>
-                   <!-- <td>{{ $termine ? $ec->date_terminaison ?? 'Non définie' : '-' }}</td> -->
+                   <td>{{ $termine ?  'Non définie' : '-' }}</td> 
                 </tr>
             @endforeach
         </tbody>

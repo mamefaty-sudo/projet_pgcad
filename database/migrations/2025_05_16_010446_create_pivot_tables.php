@@ -58,24 +58,25 @@ return new class extends Migration
             $table->timestamps();
         });
 
-          Schema::create('niveau_option', function (Blueprint $table) {
+          /*Schema::create('niveau_option', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('option_id');
             $table->unsignedBigInteger('niveau_id');
             $table->foreign('option_id')->references('id')->on('options');
             $table->foreign('niveau_id')->references('id')->on('niveaux');
             $table->timestamps();
-        });
+        });*/
 
 
         //relation entre ue et ec
-        Schema::create('ues_ecs', function ( Blueprint $table) {
+        /*Schema::create('ues_ecs', function ( Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('ues_id');
             $table->unsignedBigInteger('ecs_id');
+            $table->string('codeUE');
             $table->foreign('codeUE')->references('codeUE')->on('ues');
             $table->foreign('codeEC')->references('codeEC')->on('ecs');
-        });
+        });*/
     }
 
     /**

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('ecs', function (Blueprint $table) {
+        Schema::table('ecs', function (Blueprint $table) { 
             $table->foreign('codeUE')->references('codeUE')->on('ues')->onDelete('cascade');
         });
     }

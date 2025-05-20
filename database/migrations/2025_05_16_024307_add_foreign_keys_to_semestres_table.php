@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::table('semestres', function (Blueprint $table) {
             $table->string('codeUE');
             $table->foreign('codeUE')->references('codeUE')->on('ues')->onDelete('cascade');
+   
+            //$table->foreign('niveau_id')->references('id')->on('niveaux');
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ues', function (Blueprint $table) {
            // $table->string('codeUE')->primary()->check("'codeUE' LIKE ");
            $table->string('codeUE')->primary();
-           $table->string('codeEC');
+          // $table->unsignedBigInteger('codeEC');
             $table->string('Element_Constitutif');
             $table->integer('VHT');
             $table->integer('Coef');

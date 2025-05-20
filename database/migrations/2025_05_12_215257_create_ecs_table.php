@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('ecs', function (Blueprint $table) {
             $table->string('codeEC')->primary();
+            
             $table->string('intitule');
+           // $table->integer('semestre_id');
             $table->string('statut');
             $table->integer('nbHeureCM');
             $table->integer('nbHeureTD');

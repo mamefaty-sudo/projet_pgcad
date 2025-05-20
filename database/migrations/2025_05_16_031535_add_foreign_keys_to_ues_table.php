@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ues', function (Blueprint $table) {
-            $table->foreign('codeEC')->references('codeEC')->on('ecs')->onDelete('cascade');
+                $table->foreign('niveau_id')->references('id')->on('niveaux');
         });
     }
 

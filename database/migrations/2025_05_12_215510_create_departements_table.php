@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('departements', function (Blueprint $table) {
             $table->id();
             $table->string('nomDpt');
-            $table->unsignedBigInteger('niveau_id')->nullable();
+           // $table->unsignedBigInteger('niveau_id')->nullable();
             $table->timestamps();
-            $table->foreign('niveau_id')->references('id')->on('niveaux');
+           // $table->foreign('niveau_id')->references('id')->on('niveaux');
         });
     }
 

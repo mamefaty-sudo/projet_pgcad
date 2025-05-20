@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('niveaux', function (Blueprint $table) {
-            $table->foreign('codeUE')->references('codeUE')->on('ues')->onDelete('cascade');
-            $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
+                $table->foreign('codeUE')->references('codeUE')->on('ues')->onDelete('cascade');
+                $table->foreign('semestre_id')->references('id')->on('options')->onDelete('cascade');
+                 $table->foreign('option_id')->references('id')->on('options')->nullable();
+                          $table->foreign('annee_academique_id')->references('id')->on('annee_academiques')->onDelete('cascade');
+                
+                
+             
         });
     }
 

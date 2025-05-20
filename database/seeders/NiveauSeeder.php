@@ -12,6 +12,10 @@ class NiveauSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('Niveau')->insert([
+            'id' => 1,
+            'nom_niveau' => 'L1',
+            'id_departement' => 1,
+        ]);
     }
 }
